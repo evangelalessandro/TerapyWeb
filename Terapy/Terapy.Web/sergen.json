@@ -1,0 +1,39 @@
+{
+  "RootNamespace": "Terapy",
+  "ServerTypings": {
+    "Assemblies": []
+  },
+  "Connections": [
+    {
+      "Key": "Terapy",
+      "Tables": [
+        {
+          "Tablename": "dbo.Customers",
+          "Identifier": "Customers",
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General.Customers"
+        },
+        {
+          "Tablename": "dbo.Employees",
+          "Identifier": "Employees",
+          "Module": "Terapy",
+          "PermissionKey": "Administration:General.Employees"
+        },
+        {
+          "Tablename": "dbo.TurnTerapy",
+          "Identifier": "TurnTerapy",
+          "Module": "Terapy",
+          "PermissionKey": "Administration:General.TurnTerapy"
+        },
+        {
+          "Tablename": "dbo.UnableTerapyCustomer",
+          "Identifier": "UnableTerapyCustomer",
+          "Module": "Terapy",
+          "PermissionKey": "Administration:General.UnableTerapyCustomer"
+        }
+      ]
+    }
+  ],
+  "BaseRowClasses": [],
+  "RemoveForeignFields": []
+}
