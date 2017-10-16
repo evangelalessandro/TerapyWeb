@@ -8962,3 +8962,15 @@ section.content > .s-DataGrid {
 .s-TerapyDB-CustomersDialog .caption {
   width: 150px;
 }
+.s-TerapyDB-TurnTerapyDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-TurnTerapyDialog .caption {
+  width: 150px;
+}
+.s-TerapyDB-CategoriesTerapyDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-CategoriesTerapyDialog .caption {
+  width: 150px;
+}

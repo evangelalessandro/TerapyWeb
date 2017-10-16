@@ -8,6 +8,12 @@
       "Key": "Terapy",
       "Tables": [
         {
+          "Tablename": "dbo.CategoriesTerapy",
+          "Identifier": "CategoriesTerapy",
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General.CategoriesTerapy"
+        },
+        {
           "Tablename": "dbo.Customers",
           "Identifier": "Customers",
           "Module": "TerapyDB",
@@ -22,7 +28,7 @@
         {
           "Tablename": "dbo.TurnTerapy",
           "Identifier": "TurnTerapy",
-          "Module": "Terapy",
+          "Module": "TerapyDB",
           "PermissionKey": "Administration:General.TurnTerapy"
         },
         {

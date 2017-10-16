@@ -440,9 +440,19 @@ namespace MVC
 
         public static class TerapyDB
         {
+            public static class CategoriesTerapy
+            {
+                public const string CategoriesTerapyIndex = "~/Modules/TerapyDB/CategoriesTerapy/CategoriesTerapyIndex.cshtml";
+            }
+
             public static class Customers
             {
                 public const string CustomersIndex = "~/Modules/TerapyDB/Customers/CustomersIndex.cshtml";
+            }
+
+            public static class TurnTerapy
+            {
+                public const string TurnTerapyIndex = "~/Modules/TerapyDB/TurnTerapy/TurnTerapyIndex.cshtml";
             }
 
         }

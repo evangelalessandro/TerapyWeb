@@ -15,8 +15,9 @@ namespace Terapy.TerapyDB.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 CustomerId { get; set; }
-        [EditLink]
+        [EditLink, DisplayName("Name")]
         public String CustomerName { get; set; }
+        [DisplayName("Surname")]
         public String CustomerSurname { get; set; }
         public String Address { get; set; }
         public String City { get; set; }
