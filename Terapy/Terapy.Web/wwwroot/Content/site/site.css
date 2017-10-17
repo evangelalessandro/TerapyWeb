@@ -8974,3 +8974,39 @@ section.content > .s-DataGrid {
 .s-TerapyDB-CategoriesTerapyDialog .caption {
   width: 150px;
 }
+.s-TerapyDB-CustomerTurnDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-CustomerTurnDialog .caption {
+  width: 150px;
+}
+.s-TerapyDB-EmployeesDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-EmployeesDialog .caption {
+  width: 150px;
+}
+.s-TerapyDB-MessagesTranslationDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-MessagesTranslationDialog .caption {
+  width: 150px;
+}
+.s-TerapyDB-SchedulerTerapyDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-SchedulerTerapyDialog .caption {
+  width: 150px;
+}
+.s-TerapyDB-TerapyTypeDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-TerapyTypeDialog .caption {
+  width: 150px;
+}
+.s-TerapyDB-UnableTerapyCustomerDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-UnableTerapyCustomerDialog .caption {
+  width: 150px;
+}

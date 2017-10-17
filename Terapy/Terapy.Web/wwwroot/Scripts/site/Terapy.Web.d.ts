@@ -2850,6 +2850,349 @@ declare namespace Terapy.TerapyDB {
 declare namespace Terapy.TerapyDB {
 }
 declare namespace Terapy.TerapyDB {
+    class CustomerTurnForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface CustomerTurnForm {
+        TurnId: Serenity.IntegerEditor;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    interface CustomerTurnRow {
+        CustomerId?: number;
+        TurnId?: number;
+        CustomerCustomerName?: string;
+        CustomerCustomerSurname?: string;
+        CustomerAddress?: string;
+        CustomerCity?: string;
+        CustomerRegion?: string;
+        CustomerPostalCode?: string;
+        CustomerCountry?: string;
+        CustomerPhone?: string;
+        CustomerEmail?: string;
+        TurnTurnName?: string;
+        TurnTurnDataStart?: string;
+        TurnTurnEndDate?: string;
+    }
+    namespace CustomerTurnRow {
+        const idProperty = "CustomerId";
+        const localTextPrefix = "TerapyDB.CustomerTurn";
+        namespace Fields {
+            const CustomerId: string;
+            const TurnId: string;
+            const CustomerCustomerName: string;
+            const CustomerCustomerSurname: string;
+            const CustomerAddress: string;
+            const CustomerCity: string;
+            const CustomerRegion: string;
+            const CustomerPostalCode: string;
+            const CustomerCountry: string;
+            const CustomerPhone: string;
+            const CustomerEmail: string;
+            const TurnTurnName: string;
+            const TurnTurnDataStart: string;
+            const TurnTurnEndDate: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+    namespace CustomerTurnService {
+        const baseUrl = "TerapyDB/CustomerTurn";
+        function Create(request: Serenity.SaveRequest<CustomerTurnRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CustomerTurnRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CustomerTurnRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CustomerTurnRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+}
+declare namespace Terapy.TerapyDB {
+    class EmployeesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface EmployeesForm {
+        LastName: Serenity.StringEditor;
+        FirstName: Serenity.StringEditor;
+        BirthDate: Serenity.DateEditor;
+        Address: Serenity.StringEditor;
+        City: Serenity.StringEditor;
+        Region: Serenity.StringEditor;
+        PostalCode: Serenity.StringEditor;
+        Country: Serenity.StringEditor;
+        Phone: Serenity.StringEditor;
+        Photo: Serenity.StringEditor;
+        Notes: Serenity.StringEditor;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    interface EmployeesRow {
+        EmployeeId?: number;
+        LastName?: string;
+        FirstName?: string;
+        BirthDate?: string;
+        Address?: string;
+        City?: string;
+        Region?: string;
+        PostalCode?: string;
+        Country?: string;
+        Phone?: string;
+        Photo?: number[];
+        Notes?: string;
+    }
+    namespace EmployeesRow {
+        const idProperty = "EmployeeId";
+        const nameProperty = "LastName";
+        const localTextPrefix = "TerapyDB.Employees";
+        namespace Fields {
+            const EmployeeId: string;
+            const LastName: string;
+            const FirstName: string;
+            const BirthDate: string;
+            const Address: string;
+            const City: string;
+            const Region: string;
+            const PostalCode: string;
+            const Country: string;
+            const Phone: string;
+            const Photo: string;
+            const Notes: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+    namespace EmployeesService {
+        const baseUrl = "TerapyDB/Employees";
+        function Create(request: Serenity.SaveRequest<EmployeesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<EmployeesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<EmployeesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<EmployeesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+}
+declare namespace Terapy.TerapyDB {
+    class MessagesTranslationForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface MessagesTranslationForm {
+        MessageEn: Serenity.StringEditor;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    interface MessagesTranslationRow {
+        MessageId?: number;
+        MessageEn?: string;
+    }
+    namespace MessagesTranslationRow {
+        const idProperty = "MessageId";
+        const nameProperty = "MessageEn";
+        const localTextPrefix = "TerapyDB.MessagesTranslation";
+        namespace Fields {
+            const MessageId: string;
+            const MessageEn: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+    namespace MessagesTranslationService {
+        const baseUrl = "TerapyDB/MessagesTranslation";
+        function Create(request: Serenity.SaveRequest<MessagesTranslationRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MessagesTranslationRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MessagesTranslationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MessagesTranslationRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+}
+declare namespace Terapy.TerapyDB {
+    class SchedulerTerapyForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface SchedulerTerapyForm {
+        SchedulerDateTime: Serenity.DateEditor;
+        SchedEmploy: Serenity.IntegerEditor;
+        SchedCustomerId: Serenity.IntegerEditor;
+        SchedTurnId: Serenity.IntegerEditor;
+        SchedTerapyTypeId: Serenity.IntegerEditor;
+        SchedNote: Serenity.StringEditor;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    interface SchedulerTerapyRow {
+        SchedulerId?: number;
+        SchedulerDateTime?: string;
+        SchedEmploy?: number;
+        SchedCustomerId?: number;
+        SchedTurnId?: number;
+        SchedTerapyTypeId?: number;
+        SchedNote?: string;
+        SchedEmployLastName?: string;
+        SchedEmployFirstName?: string;
+        SchedEmployBirthDate?: string;
+        SchedEmployAddress?: string;
+        SchedEmployCity?: string;
+        SchedEmployRegion?: string;
+        SchedEmployPostalCode?: string;
+        SchedEmployCountry?: string;
+        SchedEmployPhone?: string;
+        SchedEmployPhoto?: number[];
+        SchedEmployNotes?: string;
+        SchedCustomerCustomerName?: string;
+        SchedCustomerCustomerSurname?: string;
+        SchedCustomerAddress?: string;
+        SchedCustomerCity?: string;
+        SchedCustomerRegion?: string;
+        SchedCustomerPostalCode?: string;
+        SchedCustomerCountry?: string;
+        SchedCustomerPhone?: string;
+        SchedCustomerEmail?: string;
+        SchedTurnTurnName?: string;
+        SchedTurnTurnDataStart?: string;
+        SchedTurnTurnEndDate?: string;
+        SchedTerapyTypeTerapyTypeName?: string;
+        SchedTerapyTypePersonXSession?: number;
+        SchedTerapyTypeTerapyTypeCategoryId?: number;
+        SchedTerapyTypeReportOrder?: number;
+    }
+    namespace SchedulerTerapyRow {
+        const idProperty = "SchedulerId";
+        const nameProperty = "SchedNote";
+        const localTextPrefix = "TerapyDB.SchedulerTerapy";
+        namespace Fields {
+            const SchedulerId: string;
+            const SchedulerDateTime: string;
+            const SchedEmploy: string;
+            const SchedCustomerId: string;
+            const SchedTurnId: string;
+            const SchedTerapyTypeId: string;
+            const SchedNote: string;
+            const SchedEmployLastName: string;
+            const SchedEmployFirstName: string;
+            const SchedEmployBirthDate: string;
+            const SchedEmployAddress: string;
+            const SchedEmployCity: string;
+            const SchedEmployRegion: string;
+            const SchedEmployPostalCode: string;
+            const SchedEmployCountry: string;
+            const SchedEmployPhone: string;
+            const SchedEmployPhoto: string;
+            const SchedEmployNotes: string;
+            const SchedCustomerCustomerName: string;
+            const SchedCustomerCustomerSurname: string;
+            const SchedCustomerAddress: string;
+            const SchedCustomerCity: string;
+            const SchedCustomerRegion: string;
+            const SchedCustomerPostalCode: string;
+            const SchedCustomerCountry: string;
+            const SchedCustomerPhone: string;
+            const SchedCustomerEmail: string;
+            const SchedTurnTurnName: string;
+            const SchedTurnTurnDataStart: string;
+            const SchedTurnTurnEndDate: string;
+            const SchedTerapyTypeTerapyTypeName: string;
+            const SchedTerapyTypePersonXSession: string;
+            const SchedTerapyTypeTerapyTypeCategoryId: string;
+            const SchedTerapyTypeReportOrder: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+    namespace SchedulerTerapyService {
+        const baseUrl = "TerapyDB/SchedulerTerapy";
+        function Create(request: Serenity.SaveRequest<SchedulerTerapyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SchedulerTerapyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SchedulerTerapyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SchedulerTerapyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+}
+declare namespace Terapy.TerapyDB {
+    class TerapyTypeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface TerapyTypeForm {
+        TerapyTypeName: Serenity.StringEditor;
+        PersonXSession: Serenity.IntegerEditor;
+        TerapyTypeCategoryId: Serenity.IntegerEditor;
+        ReportOrder: Serenity.IntegerEditor;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    interface TerapyTypeRow {
+        TerapyTypeId?: number;
+        TerapyTypeName?: string;
+        PersonXSession?: number;
+        TerapyTypeCategoryId?: number;
+        ReportOrder?: number;
+        TerapyTypeCategoryCategoryName?: string;
+    }
+    namespace TerapyTypeRow {
+        const idProperty = "TerapyTypeId";
+        const nameProperty = "TerapyTypeName";
+        const localTextPrefix = "TerapyDB.TerapyType";
+        namespace Fields {
+            const TerapyTypeId: string;
+            const TerapyTypeName: string;
+            const PersonXSession: string;
+            const TerapyTypeCategoryId: string;
+            const ReportOrder: string;
+            const TerapyTypeCategoryCategoryName: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+    namespace TerapyTypeService {
+        const baseUrl = "TerapyDB/TerapyType";
+        function Create(request: Serenity.SaveRequest<TerapyTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TerapyTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TerapyTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TerapyTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+}
+declare namespace Terapy.TerapyDB {
     class TurnTerapyForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -2886,6 +3229,47 @@ declare namespace Terapy.TerapyDB {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TurnTerapyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TurnTerapyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+}
+declare namespace Terapy.TerapyDB {
+    class UnableTerapyCustomerForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface UnableTerapyCustomerForm {
+        CustomerId: Serenity.IntegerEditor;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    interface UnableTerapyCustomerRow {
+        TerapyTypeId?: number;
+        CustomerId?: number;
+    }
+    namespace UnableTerapyCustomerRow {
+        const idProperty = "TerapyTypeId";
+        const localTextPrefix = "TerapyDB.UnableTerapyCustomer";
+        namespace Fields {
+            const TerapyTypeId: string;
+            const CustomerId: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+    namespace UnableTerapyCustomerService {
+        const baseUrl = "TerapyDB/UnableTerapyCustomer";
+        function Create(request: Serenity.SaveRequest<UnableTerapyCustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<UnableTerapyCustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UnableTerapyCustomerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UnableTerapyCustomerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
             const Create: string;
             const Update: string;
@@ -4651,6 +5035,105 @@ declare namespace Terapy.TerapyDB {
     }
 }
 declare namespace Terapy.TerapyDB {
+    class CustomerTurnDialog extends Serenity.EntityDialog<CustomerTurnRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected form: CustomerTurnForm;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class CustomerTurnGrid extends Serenity.EntityGrid<CustomerTurnRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CustomerTurnDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class EmployeesDialog extends Serenity.EntityDialog<EmployeesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: EmployeesForm;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class EmployeesGrid extends Serenity.EntityGrid<EmployeesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof EmployeesDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class MessagesTranslationDialog extends Serenity.EntityDialog<MessagesTranslationRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: MessagesTranslationForm;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class MessagesTranslationGrid extends Serenity.EntityGrid<MessagesTranslationRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MessagesTranslationDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class SchedulerTerapyDialog extends Serenity.EntityDialog<SchedulerTerapyRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SchedulerTerapyForm;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class SchedulerTerapyGrid extends Serenity.EntityGrid<SchedulerTerapyRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SchedulerTerapyDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class TerapyTypeDialog extends Serenity.EntityDialog<TerapyTypeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: TerapyTypeForm;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class TerapyTypeGrid extends Serenity.EntityGrid<TerapyTypeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TerapyTypeDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
     class TurnTerapyDialog extends Serenity.EntityDialog<TurnTerapyRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -4664,6 +5147,25 @@ declare namespace Terapy.TerapyDB {
     class TurnTerapyGrid extends Serenity.EntityGrid<TurnTerapyRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof TurnTerapyDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class UnableTerapyCustomerDialog extends Serenity.EntityDialog<UnableTerapyCustomerRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected form: UnableTerapyCustomerForm;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class UnableTerapyCustomerGrid extends Serenity.EntityGrid<UnableTerapyCustomerRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UnableTerapyCustomerDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

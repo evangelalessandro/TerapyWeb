@@ -450,9 +450,39 @@ namespace MVC
                 public const string CustomersIndex = "~/Modules/TerapyDB/Customers/CustomersIndex.cshtml";
             }
 
+            public static class CustomerTurn
+            {
+                public const string CustomerTurnIndex = "~/Modules/TerapyDB/CustomerTurn/CustomerTurnIndex.cshtml";
+            }
+
+            public static class Employees
+            {
+                public const string EmployeesIndex = "~/Modules/TerapyDB/Employees/EmployeesIndex.cshtml";
+            }
+
+            public static class MessagesTranslation
+            {
+                public const string MessagesTranslationIndex = "~/Modules/TerapyDB/MessagesTranslation/MessagesTranslationIndex.cshtml";
+            }
+
+            public static class SchedulerTerapy
+            {
+                public const string SchedulerTerapyIndex = "~/Modules/TerapyDB/SchedulerTerapy/SchedulerTerapyIndex.cshtml";
+            }
+
+            public static class TerapyType
+            {
+                public const string TerapyTypeIndex = "~/Modules/TerapyDB/TerapyType/TerapyTypeIndex.cshtml";
+            }
+
             public static class TurnTerapy
             {
                 public const string TurnTerapyIndex = "~/Modules/TerapyDB/TurnTerapy/TurnTerapyIndex.cshtml";
+            }
+
+            public static class UnableTerapyCustomer
+            {
+                public const string UnableTerapyCustomerIndex = "~/Modules/TerapyDB/UnableTerapyCustomer/UnableTerapyCustomerIndex.cshtml";
             }
 
         }

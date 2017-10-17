@@ -20,10 +20,34 @@
           "PermissionKey": "Administration:General.Customers"
         },
         {
+          "Tablename": "dbo.CustomerTurn",
+          "Identifier": "CustomerTurn",
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General.Customer"
+        },
+        {
           "Tablename": "dbo.Employees",
           "Identifier": "Employees",
-          "Module": "Terapy",
-          "PermissionKey": "Administration:General.Employees"
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General.Employ"
+        },
+        {
+          "Tablename": "dbo.MessagesTranslation",
+          "Identifier": "MessagesTranslation",
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General.Translation"
+        },
+        {
+          "Tablename": "dbo.SchedulerTerapy",
+          "Identifier": "SchedulerTerapy",
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General.Scheduler"
+        },
+        {
+          "Tablename": "dbo.TerapyType",
+          "Identifier": "TerapyType",
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General.Terapy"
         },
         {
           "Tablename": "dbo.TurnTerapy",
@@ -34,8 +58,8 @@
         {
           "Tablename": "dbo.UnableTerapyCustomer",
           "Identifier": "UnableTerapyCustomer",
-          "Module": "Terapy",
-          "PermissionKey": "Administration:General.UnableTerapyCustomer"
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General.UnableCustomer"
         }
       ]
     }
