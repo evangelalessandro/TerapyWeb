@@ -12,6 +12,7 @@ namespace Terapy.TerapyDB.Entities
     [ConnectionKey("Terapy"), TableName("[dbo].[Employees]"), DisplayName("Employees"), InstanceName("Employees"), TwoLevelCached]
     [ReadPermission("Administration:General.Employ")]
     [ModifyPermission("Administration:General.Employ")]
+    [LookupScript("TerapyDb.Employees")]
     public sealed class EmployeesRow : Row, IIdRow, INameRow
     {
         [DisplayName("Employee Id"), Column("EmployeeID"), Identity]

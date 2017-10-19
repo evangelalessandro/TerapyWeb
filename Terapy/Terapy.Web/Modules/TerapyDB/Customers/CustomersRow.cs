@@ -6,6 +6,7 @@ namespace Terapy.TerapyDB.Entities
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.IO;
 
@@ -33,6 +34,14 @@ namespace Terapy.TerapyDB.Entities
         {
             get { return Fields.CustomerSurname[this]; }
             set { Fields.CustomerSurname[this] = value; }
+        }
+        [DisplayName("Terapy Unable")]
+        [LookupEditor(typeof(TerapyTypeRow), Multiple = true), NotMapped]
+        [LinkingSetRelation(typeof(UnableTerapyCustomerRow), "CustomerID", "TerapyTypeID")]
+        public List<Int32> UnableTerapyList
+        {
+            get { return Fields.UnableTerapyList[this]; }
+            set { Fields.UnableTerapyList[this] = value; }
         }
 
         [DisplayName("Address"), Size(60)]
@@ -104,6 +113,7 @@ namespace Terapy.TerapyDB.Entities
         public class RowFields : RowFieldsBase
         {
             public Int32Field CustomerId;
+            public ListField<Int32> UnableTerapyList;
             public StringField CustomerName;
             public StringField CustomerSurname;
             public StringField Address;

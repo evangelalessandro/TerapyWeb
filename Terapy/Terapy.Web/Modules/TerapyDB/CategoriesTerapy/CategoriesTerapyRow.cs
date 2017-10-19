@@ -12,6 +12,7 @@ namespace Terapy.TerapyDB.Entities
     [ConnectionKey("Terapy"), TableName("[dbo].[CategoriesTerapy]"), DisplayName("Categories Terapy"), InstanceName("Categories Terapy"), TwoLevelCached]
     [ReadPermission("Administration:General.CategoriesTerapy")]
     [ModifyPermission("Administration:General.CategoriesTerapy")]
+    [LookupScript("TerapyDb.CategoriesTerapy")]
     public sealed class CategoriesTerapyRow : Row, IIdRow, INameRow
     {
         [DisplayName("Category Id"), Column("CategoryID"), PrimaryKey]

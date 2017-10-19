@@ -12,6 +12,7 @@ namespace Terapy.TerapyDB.Entities
     [ConnectionKey("Terapy"), TableName("[dbo].[TerapyType]"), DisplayName("Terapy Type"), InstanceName("Terapy Type"), TwoLevelCached]
     [ReadPermission("Administration:General.Terapy")]
     [ModifyPermission("Administration:General.Terapy")]
+    [LookupScript("TerapyDb.TerapyType")]
     public sealed class TerapyTypeRow : Row, IIdRow, INameRow
     {
         [DisplayName("Terapy Type Id"), Column("TerapyTypeID"), Identity]
@@ -39,8 +40,8 @@ namespace Terapy.TerapyDB.Entities
 
         //    LeftJoin("jTerapyTypeCategory")
         //[DisplayName("Category"), ForeignKey(typeof(CategoriesTerapyRow)), LeftJoin("e"),  TextualField("Category")]
-        [DisplayName("Employee"), ForeignKey(typeof(CategoriesTerapyRow)), LeftJoin("e")]
-        [ TextualField("Category")]
+        [DisplayName("Category"), ForeignKey("CategoriesTerapy","CategoryID"), LeftJoin("g")]
+        [LookupEditor(typeof(CategoriesTerapyRow),InplaceAdd = true, DialogType = "TerapyDB.CategoriesTerapy"),DefaultValue(0)]
         public Int32? TerapyTypeCategoryId
         {
             get { return Fields.TerapyTypeCategoryId[this]; }
@@ -54,7 +55,7 @@ namespace Terapy.TerapyDB.Entities
             set { Fields.ReportOrder[this] = value; }
         }
 
-        [DisplayName("Category Name"), Expression("e.[CategoryName]")]
+        [DisplayName("Category Name"), Expression("g.[CategoryName]")]
         public String TerapyTypeCategoryCategoryName
         {
             get { return Fields.TerapyTypeCategoryCategoryName[this]; }

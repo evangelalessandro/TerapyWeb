@@ -17,8 +17,11 @@ namespace Terapy.TerapyDB.Columns
         public Int32 TerapyTypeId { get; set; }
         [EditLink]
         public String TerapyTypeName { get; set; }
+        [DisplayName("Person for each session"), Width(100)]
         public Int32 PersonXSession { get; set; }
-        public Int32 TerapyTypeCategoryId { get; set; }
+        [DisplayName("Category"), Width(100)]
+        public Int32 TerapyTypeCategoryCategoryName { get; set; }
+        [DisplayName("Order into report"), Width(150)]
         public Int32 ReportOrder { get; set; }
     }
 }
