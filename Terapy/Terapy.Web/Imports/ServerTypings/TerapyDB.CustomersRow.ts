@@ -1,6 +1,7 @@
 ﻿namespace Terapy.TerapyDB {
     export interface CustomersRow {
         CustomerId?: number;
+        UnableTerapyList?: number[];
         CustomerName?: string;
         CustomerSurname?: string;
         Address?: string;
@@ -19,6 +20,7 @@
 
         export namespace Fields {
             export declare const CustomerId: string;
+            export declare const UnableTerapyList: string;
             export declare const CustomerName: string;
             export declare const CustomerSurname: string;
             export declare const Address: string;
@@ -30,6 +32,6 @@
             export declare const Email: string;
         }
 
-        ['CustomerId', 'CustomerName', 'CustomerSurname', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Email'].forEach(x => (<any>Fields)[x] = x);
+        ['CustomerId', 'UnableTerapyList', 'CustomerName', 'CustomerSurname', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Email'].forEach(x => (<any>Fields)[x] = x);
     }
 }

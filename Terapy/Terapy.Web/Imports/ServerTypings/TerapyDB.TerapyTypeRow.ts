@@ -12,6 +12,11 @@
         export const idProperty = 'TerapyTypeId';
         export const nameProperty = 'TerapyTypeName';
         export const localTextPrefix = 'TerapyDB.TerapyType';
+        export const lookupKey = 'TerapyDB.TerapyType';
+
+        export function getLookup(): Q.Lookup<TerapyTypeRow> {
+            return Q.getLookup<TerapyTypeRow>('TerapyDB.TerapyType');
+        }
 
         export namespace Fields {
             export declare const TerapyTypeId: string;

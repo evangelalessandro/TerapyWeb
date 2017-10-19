@@ -9,10 +9,10 @@ namespace Terapy.TerapyDB.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("Terapy"), TableName("[dbo].[TerapyType]"), DisplayName("Terapy Type"), InstanceName("Terapy Type"), TwoLevelCached]
+    [ConnectionKey("Terapy"), TableName("[TerapyType]"), DisplayName("Terapy Type"), InstanceName("Terapy Type"), TwoLevelCached]
     [ReadPermission("Administration:General.Terapy")]
     [ModifyPermission("Administration:General.Terapy")]
-    [LookupScript("TerapyDb.TerapyType")]
+    [LookupScript(typeof(Scripts.TerapyTypeLookup))]
     public sealed class TerapyTypeRow : Row, IIdRow, INameRow
     {
         [DisplayName("Terapy Type Id"), Column("TerapyTypeID"), Identity]

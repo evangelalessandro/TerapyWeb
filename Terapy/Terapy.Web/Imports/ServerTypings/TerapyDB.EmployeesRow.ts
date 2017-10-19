@@ -18,6 +18,11 @@
         export const idProperty = 'EmployeeId';
         export const nameProperty = 'LastName';
         export const localTextPrefix = 'TerapyDB.Employees';
+        export const lookupKey = 'TerapyDb.Employees';
+
+        export function getLookup(): Q.Lookup<EmployeesRow> {
+            return Q.getLookup<EmployeesRow>('TerapyDb.Employees');
+        }
 
         export namespace Fields {
             export declare const EmployeeId: string;

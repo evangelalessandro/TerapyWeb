@@ -12,7 +12,7 @@ namespace Terapy.TerapyDB.Entities
     [ConnectionKey("Terapy"), TableName("[dbo].[TurnTerapy]"), DisplayName("Turn Terapy"), InstanceName("Turn Terapy"), TwoLevelCached]
     [ReadPermission("Administration:General.TurnTerapy")]
     [ModifyPermission("Administration:General.TurnTerapy")]
-    [LookupScript("TerapyDb.TurnTerapy")]
+    [LookupScript(typeof(Scripts.TurnTerapyLookup))]
     public sealed class TurnTerapyRow : Row, IIdRow, INameRow
     {
         [DisplayName("Turn Id"), Column("TurnID"), Identity]

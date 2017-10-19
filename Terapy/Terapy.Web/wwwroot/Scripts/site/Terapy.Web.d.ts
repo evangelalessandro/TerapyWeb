@@ -4690,6 +4690,7 @@ declare namespace Terapy.TerapyDB {
     interface CustomersForm {
         CustomerName: Serenity.StringEditor;
         CustomerSurname: Serenity.StringEditor;
+        UnableTerapyList: Serenity.LookupEditor;
         Address: Serenity.StringEditor;
         City: Serenity.StringEditor;
         Region: Serenity.StringEditor;
@@ -4702,6 +4703,7 @@ declare namespace Terapy.TerapyDB {
 declare namespace Terapy.TerapyDB {
     interface CustomersRow {
         CustomerId?: number;
+        UnableTerapyList?: number[];
         CustomerName?: string;
         CustomerSurname?: string;
         Address?: string;
@@ -4718,6 +4720,7 @@ declare namespace Terapy.TerapyDB {
         const localTextPrefix = "TerapyDB.Customers";
         namespace Fields {
             const CustomerId: string;
+            const UnableTerapyList: string;
             const CustomerName: string;
             const CustomerSurname: string;
             const Address: string;
@@ -4851,6 +4854,8 @@ declare namespace Terapy.TerapyDB {
         const idProperty = "EmployeeId";
         const nameProperty = "LastName";
         const localTextPrefix = "TerapyDB.Employees";
+        const lookupKey = "TerapyDb.Employees";
+        function getLookup(): Q.Lookup<EmployeesRow>;
         namespace Fields {
             const EmployeeId: string;
             const LastName: string;
@@ -5063,6 +5068,8 @@ declare namespace Terapy.TerapyDB {
         const idProperty = "TerapyTypeId";
         const nameProperty = "TerapyTypeName";
         const localTextPrefix = "TerapyDB.TerapyType";
+        const lookupKey = "TerapyDB.TerapyType";
+        function getLookup(): Q.Lookup<TerapyTypeRow>;
         namespace Fields {
             const TerapyTypeId: string;
             const TerapyTypeName: string;
@@ -5113,6 +5120,8 @@ declare namespace Terapy.TerapyDB {
         const idProperty = "TurnId";
         const nameProperty = "TurnName";
         const localTextPrefix = "TerapyDB.TurnTerapy";
+        const lookupKey = "TerapyDb.TurnTerapy";
+        function getLookup(): Q.Lookup<TurnTerapyRow>;
         namespace Fields {
             const TurnId: string;
             const TurnName: string;

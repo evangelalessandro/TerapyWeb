@@ -10,7 +10,7 @@
                 let g = byId[x];
                 if (!g)
                     return x.toString();
-                return Q.htmlEncode(g.Name);
+                return Q.htmlEncode(g.TerapyTypeCategoryCategoryName);
             }).join(", ");
         }
     }
