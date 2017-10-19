@@ -20,26 +20,6 @@ declare namespace Terapy.TerapyDB {
     }
 }
 declare namespace Terapy.TerapyDB {
-    class TurnTerapyDialog extends Serenity.EntityDialog<TurnTerapyRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: TurnTerapyForm;
-    }
-}
-declare namespace Terapy.TerapyDB {
-    class TurnTerapyGrid extends Serenity.EntityGrid<TurnTerapyRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof TurnTerapyDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Terapy.TerapyDB {
     class TerapyTypeDialog extends Serenity.EntityDialog<TerapyTypeRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -139,6 +119,11 @@ declare namespace Terapy.TerapyDB {
     }
 }
 declare namespace Terapy.TerapyDB {
+    class CustomerListFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext): string;
+    }
+}
+declare namespace Terapy.TerapyDB {
     class CustomersDialog extends Serenity.EntityDialog<CustomersRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -160,6 +145,11 @@ declare namespace Terapy.TerapyDB {
 }
 declare namespace Terapy.TerapyDB {
     class TerapyListFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext): string;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class TurnTerapyListFormatter implements Slick.Formatter {
         format(ctx: Slick.FormatterContext): string;
     }
 }
@@ -4704,6 +4694,7 @@ declare namespace Terapy.TerapyDB {
     interface CustomersRow {
         CustomerId?: number;
         UnableTerapyList?: number[];
+        TurnList?: number[];
         CustomerName?: string;
         CustomerSurname?: string;
         Address?: string;
@@ -4718,9 +4709,12 @@ declare namespace Terapy.TerapyDB {
         const idProperty = "CustomerId";
         const nameProperty = "CustomerName";
         const localTextPrefix = "TerapyDB.Customers";
+        const lookupKey = "TerapyDB.Customers";
+        function getLookup(): Q.Lookup<CustomersRow>;
         namespace Fields {
             const CustomerId: string;
             const UnableTerapyList: string;
+            const TurnList: string;
             const CustomerName: string;
             const CustomerSurname: string;
             const Address: string;
@@ -5120,7 +5114,7 @@ declare namespace Terapy.TerapyDB {
         const idProperty = "TurnId";
         const nameProperty = "TurnName";
         const localTextPrefix = "TerapyDB.TurnTerapy";
-        const lookupKey = "TerapyDb.TurnTerapy";
+        const lookupKey = "TerapyDB.TurnTerapy";
         function getLookup(): Q.Lookup<TurnTerapyRow>;
         namespace Fields {
             const TurnId: string;

@@ -21,7 +21,7 @@ namespace Terapy.TerapyDB.Columns
         public String CustomerSurname { get; set; }
         [DisplayName("Unable Terapy"),Width(150), TerapyListFormatter]
         public List<Int32> UnableTerapyList;
-        [DisplayName("Turn"), Width(150), TurnListFormatter]
+        [DisplayName("Turn"), Width(150), TurnTerapyListFormatter]
         public List<Int32> TurnTerapyList;
         [QuickFilter]
         public String Address { get; set; }

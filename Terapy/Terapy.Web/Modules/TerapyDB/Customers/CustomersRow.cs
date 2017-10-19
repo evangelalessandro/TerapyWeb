@@ -13,6 +13,7 @@ namespace Terapy.TerapyDB.Entities
     [ConnectionKey("Terapy"), TableName("[dbo].[Customers]"), DisplayName("Customers"), InstanceName("Customers"), TwoLevelCached]
     [ReadPermission("Administration:General.Customers")]
     [ModifyPermission("Administration:General.Customers")]
+    [LookupScript(typeof(Scripts.CustomersLookup))]
     public sealed class CustomersRow : Row, IIdRow, INameRow
     {
         [DisplayName("Customer Id"), Column("CustomerID"), Identity]
@@ -42,6 +43,14 @@ namespace Terapy.TerapyDB.Entities
         {
             get { return Fields.UnableTerapyList[this]; }
             set { Fields.UnableTerapyList[this] = value; }
+        }
+        [DisplayName("Turn")]
+        [LookupEditor(typeof(TurnTerapyRow), Multiple = true), NotMapped]
+        [LinkingSetRelation(typeof(CustomerTurnRow), "CustomerID", "TurnID")]
+        public List<Int32> TurnList
+        {
+            get { return Fields.TurnList[this]; }
+            set { Fields.TurnList[this] = value; }
         }
 
         [DisplayName("Address"), Size(60)]
@@ -114,6 +123,7 @@ namespace Terapy.TerapyDB.Entities
         {
             public Int32Field CustomerId;
             public ListField<Int32> UnableTerapyList;
+            public ListField<Int32> TurnList;
             public StringField CustomerName;
             public StringField CustomerSurname;
             public StringField Address;

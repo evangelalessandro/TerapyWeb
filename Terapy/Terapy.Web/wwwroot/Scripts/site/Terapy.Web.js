@@ -64,53 +64,6 @@ var Terapy;
 (function (Terapy) {
     var TerapyDB;
     (function (TerapyDB) {
-        var TurnTerapyDialog = /** @class */ (function (_super) {
-            __extends(TurnTerapyDialog, _super);
-            function TurnTerapyDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new TerapyDB.TurnTerapyForm(_this.idPrefix);
-                return _this;
-            }
-            TurnTerapyDialog.prototype.getFormKey = function () { return TerapyDB.TurnTerapyForm.formKey; };
-            TurnTerapyDialog.prototype.getIdProperty = function () { return TerapyDB.TurnTerapyRow.idProperty; };
-            TurnTerapyDialog.prototype.getLocalTextPrefix = function () { return TerapyDB.TurnTerapyRow.localTextPrefix; };
-            TurnTerapyDialog.prototype.getNameProperty = function () { return TerapyDB.TurnTerapyRow.nameProperty; };
-            TurnTerapyDialog.prototype.getService = function () { return TerapyDB.TurnTerapyService.baseUrl; };
-            TurnTerapyDialog = __decorate([
-                Serenity.Decorators.registerClass(),
-                Serenity.Decorators.responsive()
-            ], TurnTerapyDialog);
-            return TurnTerapyDialog;
-        }(Serenity.EntityDialog));
-        TerapyDB.TurnTerapyDialog = TurnTerapyDialog;
-    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
-})(Terapy || (Terapy = {}));
-var Terapy;
-(function (Terapy) {
-    var TerapyDB;
-    (function (TerapyDB) {
-        var TurnTerapyGrid = /** @class */ (function (_super) {
-            __extends(TurnTerapyGrid, _super);
-            function TurnTerapyGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            TurnTerapyGrid.prototype.getColumnsKey = function () { return 'TerapyDB.TurnTerapy'; };
-            TurnTerapyGrid.prototype.getDialogType = function () { return TerapyDB.TurnTerapyDialog; };
-            TurnTerapyGrid.prototype.getIdProperty = function () { return TerapyDB.TurnTerapyRow.idProperty; };
-            TurnTerapyGrid.prototype.getLocalTextPrefix = function () { return TerapyDB.TurnTerapyRow.localTextPrefix; };
-            TurnTerapyGrid.prototype.getService = function () { return TerapyDB.TurnTerapyService.baseUrl; };
-            TurnTerapyGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], TurnTerapyGrid);
-            return TurnTerapyGrid;
-        }(Serenity.EntityGrid));
-        TerapyDB.TurnTerapyGrid = TurnTerapyGrid;
-    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
-})(Terapy || (Terapy = {}));
-var Terapy;
-(function (Terapy) {
-    var TerapyDB;
-    (function (TerapyDB) {
         var TerapyTypeDialog = /** @class */ (function (_super) {
             __extends(TerapyTypeDialog, _super);
             function TerapyTypeDialog() {
@@ -345,6 +298,34 @@ var Terapy;
 (function (Terapy) {
     var TerapyDB;
     (function (TerapyDB) {
+        var CustomerListFormatter = /** @class */ (function () {
+            function CustomerListFormatter() {
+            }
+            CustomerListFormatter.prototype.format = function (ctx) {
+                var idList = ctx.value;
+                if (!idList || !idList.length)
+                    return "";
+                return "";
+                //let byId = CustomersRow.getLookup().itemById;
+                //return idList.map(x => {
+                //    let g = byId[x];
+                //    if (!g)
+                //        return x.toString();
+                //    return Q.htmlEncode(g.TurnName);
+                //}).join(", ");
+            };
+            CustomerListFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], CustomerListFormatter);
+            return CustomerListFormatter;
+        }());
+        TerapyDB.CustomerListFormatter = CustomerListFormatter;
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
         var CustomersDialog = /** @class */ (function (_super) {
             __extends(CustomersDialog, _super);
             function CustomersDialog() {
@@ -413,6 +394,33 @@ var Terapy;
             return TerapyListFormatter;
         }());
         TerapyDB.TerapyListFormatter = TerapyListFormatter;
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
+        var TurnTerapyListFormatter = /** @class */ (function () {
+            function TurnTerapyListFormatter() {
+            }
+            TurnTerapyListFormatter.prototype.format = function (ctx) {
+                var idList = ctx.value;
+                if (!idList || !idList.length)
+                    return "";
+                var byId = TerapyDB.TurnTerapyRow.getLookup().itemById;
+                return idList.map(function (x) {
+                    var g = byId[x];
+                    if (!g)
+                        return x.toString();
+                    return Q.htmlEncode(g.TurnName);
+                }).join(", ");
+            };
+            TurnTerapyListFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], TurnTerapyListFormatter);
+            return TurnTerapyListFormatter;
+        }());
+        TerapyDB.TurnTerapyListFormatter = TurnTerapyListFormatter;
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));
 var Terapy;
@@ -9655,10 +9663,15 @@ var Terapy;
             CustomersRow.idProperty = 'CustomerId';
             CustomersRow.nameProperty = 'CustomerName';
             CustomersRow.localTextPrefix = 'TerapyDB.Customers';
+            CustomersRow.lookupKey = 'TerapyDB.Customers';
+            function getLookup() {
+                return Q.getLookup('TerapyDB.Customers');
+            }
+            CustomersRow.getLookup = getLookup;
             var Fields;
             (function (Fields) {
             })(Fields = CustomersRow.Fields || (CustomersRow.Fields = {}));
-            ['CustomerId', 'UnableTerapyList', 'CustomerName', 'CustomerSurname', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Email'].forEach(function (x) { return Fields[x] = x; });
+            ['CustomerId', 'UnableTerapyList', 'TurnList', 'CustomerName', 'CustomerSurname', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Email'].forEach(function (x) { return Fields[x] = x; });
         })(CustomersRow = TerapyDB.CustomersRow || (TerapyDB.CustomersRow = {}));
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));
@@ -9958,9 +9971,9 @@ var Terapy;
             TurnTerapyRow.idProperty = 'TurnId';
             TurnTerapyRow.nameProperty = 'TurnName';
             TurnTerapyRow.localTextPrefix = 'TerapyDB.TurnTerapy';
-            TurnTerapyRow.lookupKey = 'TerapyDb.TurnTerapy';
+            TurnTerapyRow.lookupKey = 'TerapyDB.TurnTerapy';
             function getLookup() {
-                return Q.getLookup('TerapyDb.TurnTerapy');
+                return Q.getLookup('TerapyDB.TurnTerapy');
             }
             TurnTerapyRow.getLookup = getLookup;
             var Fields;

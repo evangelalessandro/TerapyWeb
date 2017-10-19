@@ -10,10 +10,10 @@
         export const idProperty = 'TurnId';
         export const nameProperty = 'TurnName';
         export const localTextPrefix = 'TerapyDB.TurnTerapy';
-        export const lookupKey = 'TerapyDb.TurnTerapy';
+        export const lookupKey = 'TerapyDB.TurnTerapy';
 
         export function getLookup(): Q.Lookup<TurnTerapyRow> {
-            return Q.getLookup<TurnTerapyRow>('TerapyDb.TurnTerapy');
+            return Q.getLookup<TurnTerapyRow>('TerapyDB.TurnTerapy');
         }
 
         export namespace Fields {
