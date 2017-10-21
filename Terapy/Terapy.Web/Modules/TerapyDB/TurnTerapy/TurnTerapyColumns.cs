@@ -16,8 +16,11 @@ namespace Terapy.TerapyDB.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 TurnId { get; set; }
         [EditLink]
+        [DisplayName("Name")]
         public String TurnName { get; set; }
+        [DisplayName("Start Date")]
         public DateTime TurnDataStart { get; set; }
+        [DisplayName("End Date")]
         public DateTime TurnEndDate { get; set; }
     }
 }

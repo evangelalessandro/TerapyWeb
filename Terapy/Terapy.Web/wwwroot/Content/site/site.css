@@ -9010,3 +9010,9 @@ section.content > .s-DataGrid {
 .s-TerapyDB-UnableTerapyCustomerDialog .caption {
   width: 150px;
 }
+.s-TerapyDB-TurnTerapyDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-TurnTerapyDialog .caption {
+  width: 150px;
+}
