@@ -20,6 +20,26 @@ declare namespace Terapy.TerapyDB {
     }
 }
 declare namespace Terapy.TerapyDB {
+    class TurnTerapyDialog extends Serenity.EntityDialog<TurnTerapyRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: TurnTerapyForm;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class TurnTerapyGrid extends Serenity.EntityGrid<TurnTerapyRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TurnTerapyDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
     class TerapyTypeDialog extends Serenity.EntityDialog<TerapyTypeRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -5092,8 +5112,6 @@ declare namespace Terapy.TerapyDB {
     }
 }
 declare namespace Terapy.TerapyDB {
-}
-declare namespace Terapy.TerapyDB {
     class TurnTerapyForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -5114,20 +5132,18 @@ declare namespace Terapy.TerapyDB {
         const idProperty = "TurnId";
         const nameProperty = "TurnName";
         const localTextPrefix = "TerapyDB.TurnTerapy";
-        const lookupKey = "TerapyDB.TurnTerapy";
-        function getLookup(): Q.Lookup<TurnTerapyRow>;
         namespace Fields {
-            const TurnId: string;
-            const TurnName: string;
-            const TurnDataStart: string;
-            const TurnEndDate: string;
+            const TurnId: any;
+            const TurnName: any;
+            const TurnDataStart: any;
+            const TurnEndDate: any;
         }
     }
 }
 declare namespace Terapy.TerapyDB {
     namespace TurnTerapyService {
         const baseUrl = "TerapyDB/TurnTerapy";
-        function Create(request: Serenity.SaveRequest<TurnTerapyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Create(request: Serenity.SaveRequest<TurnTerapyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<TurnTerapyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TurnTerapyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;

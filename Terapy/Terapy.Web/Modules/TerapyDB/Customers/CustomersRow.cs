@@ -22,21 +22,21 @@ namespace Terapy.TerapyDB.Entities
             get { return Fields.CustomerId[this]; }
             set { Fields.CustomerId[this] = value; }
         }
-
-        [DisplayName("Customer Name"), Size(50), NotNull, QuickSearch]
+           
+        [DisplayName("Name"), Size(50), NotNull, QuickSearch]
         public String CustomerName
         {
             get { return Fields.CustomerName[this]; }
             set { Fields.CustomerName[this] = value; }
         }
 
-        [DisplayName("Customer Surname"), Size(50)]
+        [DisplayName("Surname"), Size(50)]
         public String CustomerSurname
         {
             get { return Fields.CustomerSurname[this]; }
             set { Fields.CustomerSurname[this] = value; }
         }
-        [DisplayName("Terapy Unable")]
+        [DisplayName("Unable Terapy")]
         [LookupEditor(typeof(TerapyTypeRow), Multiple = true), NotMapped]
         [LinkingSetRelation(typeof(UnableTerapyCustomerRow), "CustomerID", "TerapyTypeID")]
         public List<Int32> UnableTerapyList

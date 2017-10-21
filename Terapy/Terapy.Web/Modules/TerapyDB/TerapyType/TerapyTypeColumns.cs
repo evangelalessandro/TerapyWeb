@@ -12,7 +12,7 @@ namespace Terapy.TerapyDB.Columns
     [ColumnsScript("TerapyDB.TerapyType")]
     [BasedOnRow(typeof(Entities.TerapyTypeRow))]
     public class TerapyTypeColumns
-    {
+    { 
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 TerapyTypeId { get; set; }
         [EditLink]
