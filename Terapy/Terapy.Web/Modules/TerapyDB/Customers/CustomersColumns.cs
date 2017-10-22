@@ -8,6 +8,7 @@ namespace Terapy.TerapyDB.Columns
     using System.ComponentModel;
     using System.Collections.Generic;
     using System.IO;
+    using Serenity.Reporting;
 
     [ColumnsScript("TerapyDB.Customers")]
     [BasedOnRow(typeof(Entities.CustomersRow))]
@@ -15,24 +16,15 @@ namespace Terapy.TerapyDB.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 CustomerId { get; set; }
-        [EditLink, DisplayName("Name"), QuickFilter]
+        [EditLink, DisplayName("Name")]
         public String CustomerName { get; set; }
-        [DisplayName("Surname"), QuickFilter]
+        [DisplayName("Surname")]
         public String CustomerSurname { get; set; }
-        [DisplayName("Unable Terapy"),Width(150), TerapyListFormatter]
-        public List<Int32> UnableTerapyList;
-        [DisplayName("Turn"), Width(150), TurnTerapyListFormatter]
-        public List<Int32> TurnTerapyList;
-        [QuickFilter]
-        public String Address { get; set; }
-        [QuickFilter]
-        public String City { get; set; }
-        public String Region { get; set; }
-        public String PostalCode { get; set; }
-        [QuickFilter]
-        public String Country { get; set; }
-        public String Phone { get; set; }
-        [QuickFilter]
+
+         
+        [Width(250), TurnTerapyListFormatter, CellDecorator(typeof(TurnListDecorator))]
+        public String Turns { get; set; }
+
         public String Email { get; set; }
     }
 }

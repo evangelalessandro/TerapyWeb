@@ -1,10 +1,10 @@
 ﻿namespace Terapy.TerapyDB {
     export interface CustomersRow {
         CustomerId?: number;
-        UnableTerapyList?: number[];
-        TurnList?: number[];
         CustomerName?: string;
         CustomerSurname?: string;
+        UnableTerapy?: number[];
+        Turns?: number[];
         Address?: string;
         City?: string;
         Region?: string;
@@ -26,10 +26,10 @@
 
         export namespace Fields {
             export declare const CustomerId: string;
-            export declare const UnableTerapyList: string;
-            export declare const TurnList: string;
             export declare const CustomerName: string;
             export declare const CustomerSurname: string;
+            export declare const UnableTerapy: string;
+            export declare const Turns: string;
             export declare const Address: string;
             export declare const City: string;
             export declare const Region: string;
@@ -39,6 +39,6 @@
             export declare const Email: string;
         }
 
-        ['CustomerId', 'UnableTerapyList', 'TurnList', 'CustomerName', 'CustomerSurname', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Email'].forEach(x => (<any>Fields)[x] = x);
+        ['CustomerId', 'CustomerName', 'CustomerSurname', 'UnableTerapy', 'Turns', 'Address', 'City', 'Region', 'PostalCode', 'Country', 'Phone', 'Email'].forEach(x => (<any>Fields)[x] = x);
     }
 }

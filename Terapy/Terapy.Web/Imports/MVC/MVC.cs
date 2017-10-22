@@ -450,11 +450,6 @@ namespace MVC
                 public const string CustomersIndex = "~/Modules/TerapyDB/Customers/CustomersIndex.cshtml";
             }
 
-            public static class CustomerTurn
-            {
-                public const string CustomerTurnIndex = "~/Modules/TerapyDB/CustomerTurn/CustomerTurnIndex.cshtml";
-            }
-
             public static class Employees
             {
                 public const string EmployeesIndex = "~/Modules/TerapyDB/Employees/EmployeesIndex.cshtml";

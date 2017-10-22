@@ -30,27 +30,31 @@ namespace Terapy.TerapyDB.Entities
             set { Fields.CustomerName[this] = value; }
         }
 
+         
+
         [DisplayName("Surname"), Size(50)]
         public String CustomerSurname
         {
             get { return Fields.CustomerSurname[this]; }
             set { Fields.CustomerSurname[this] = value; }
         }
-        [DisplayName("Unable Terapy")]
+
+        [DisplayName("Unable terapy"), QuickFilter]
         [LookupEditor(typeof(TerapyTypeRow), Multiple = true), NotMapped]
         [LinkingSetRelation(typeof(UnableTerapyCustomerRow), "CustomerID", "TerapyTypeID")]
-        public List<Int32> UnableTerapyList
+        public List<Int32> UnableTerapy
         {
-            get { return Fields.UnableTerapyList[this]; }
-            set { Fields.UnableTerapyList[this] = value; }
+            get { return Fields.UnableTerapy[this]; }
+            set { Fields.UnableTerapy[this] = value; }
         }
-        [DisplayName("Turn")]
+         
+        [DisplayName("Turns submitted"), QuickFilter]
         [LookupEditor(typeof(TurnTerapyRow), Multiple = true), NotMapped]
-        [LinkingSetRelation(typeof(CustomerTurnRow), "CustomerID", "TurnID")]
-        public List<Int32> TurnList
+        [LinkingSetRelation(typeof(CustomerTurnRow), "CustomerID", "TurnId")]
+        public List<Int32> Turns
         {
-            get { return Fields.TurnList[this]; }
-            set { Fields.TurnList[this] = value; }
+            get { return Fields.Turns[this]; }
+            set { Fields.Turns[this] = value; }
         }
 
         [DisplayName("Address"), Size(60)]
@@ -112,6 +116,8 @@ namespace Terapy.TerapyDB.Entities
             get { return Fields.CustomerName; }
         }
 
+        
+
         public static readonly RowFields Fields = new RowFields().Init();
 
         public CustomersRow()
@@ -122,10 +128,12 @@ namespace Terapy.TerapyDB.Entities
         public class RowFields : RowFieldsBase
         {
             public Int32Field CustomerId;
-            public ListField<Int32> UnableTerapyList;
-            public ListField<Int32> TurnList;
+
             public StringField CustomerName;
             public StringField CustomerSurname;
+            
+            public ListField<Int32> UnableTerapy;
+            public ListField<Int32> Turns;
             public StringField Address;
             public StringField City;
             public StringField Region;
@@ -133,7 +141,7 @@ namespace Terapy.TerapyDB.Entities
             public StringField Country;
             public StringField Phone;
             public StringField Email;
-
+            
             public RowFields()
                 : base()
             {

@@ -15,8 +15,8 @@ namespace Terapy.TerapyDB.Forms
     {
         public String CustomerName { get; set; }
         public String CustomerSurname { get; set; }
-        public List<Int32> UnableTerapyList { get; set; }
-        public List<Int32> TurnList { get; set; }
+        public List<Int32> UnableTerapy { get; set; }
+        public List<Int32> Turns { get; set; }
         public String Address { get; set; }
         public String City { get; set; }
         public String Region { get; set; }
