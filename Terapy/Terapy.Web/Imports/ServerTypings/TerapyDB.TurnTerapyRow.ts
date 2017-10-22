@@ -4,6 +4,7 @@
         TurnName?: string;
         TurnDataStart?: string;
         TurnEndDate?: string;
+        TurnToGenerate?: boolean;
     }
 
     export namespace TurnTerapyRow {
@@ -21,8 +22,9 @@
             export declare const TurnName: string;
             export declare const TurnDataStart: string;
             export declare const TurnEndDate: string;
+            export declare const TurnToGenerate: string;
         }
 
-        ['TurnId', 'TurnName', 'TurnDataStart', 'TurnEndDate'].forEach(x => (<any>Fields)[x] = x);
+        ['TurnId', 'TurnName', 'TurnDataStart', 'TurnEndDate', 'TurnToGenerate'].forEach(x => (<any>Fields)[x] = x);
     }
 }

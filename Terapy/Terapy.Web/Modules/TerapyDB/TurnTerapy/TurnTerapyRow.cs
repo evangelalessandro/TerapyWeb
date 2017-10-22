@@ -1,4 +1,5 @@
 ﻿
+
 namespace Terapy.TerapyDB.Entities
 {
     using Serenity;
@@ -43,6 +44,14 @@ namespace Terapy.TerapyDB.Entities
             set { Fields.TurnEndDate[this] = value; }
         }
 
+        [DisplayName("To Generate Scheduler"), NotNull]
+        public Boolean? TurnToGenerate
+        {
+            get { return Fields.TurnToGenerate[this]; }
+            set { Fields.TurnToGenerate[this] = value; }
+        }
+        
+
         IIdField IIdRow.IdField
         {
             get { return Fields.TurnId; }
@@ -66,6 +75,7 @@ namespace Terapy.TerapyDB.Entities
             public StringField TurnName;
             public DateTimeField TurnDataStart;
             public DateTimeField TurnEndDate;
+            public BooleanField TurnToGenerate;
 
             public RowFields()
                 : base()

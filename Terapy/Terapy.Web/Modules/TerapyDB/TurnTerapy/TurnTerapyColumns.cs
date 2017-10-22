@@ -22,5 +22,9 @@ namespace Terapy.TerapyDB.Columns
         public DateTime TurnDataStart { get; set; }
         [DisplayName("End Date")]
         public DateTime TurnEndDate { get; set; }
+
+        [DisplayName("To Generate")]
+        public Boolean TurnToGenerate { get; set; }
+        
     }
 }

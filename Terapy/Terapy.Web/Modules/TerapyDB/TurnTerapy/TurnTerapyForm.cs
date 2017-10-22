@@ -16,5 +16,6 @@ namespace Terapy.TerapyDB.Forms
         public String TurnName { get; set; }
         public DateTime TurnDataStart { get; set; }
         public DateTime TurnEndDate { get; set; }
+        public Boolean TurnToGenerate { get; set; }
     }
 }

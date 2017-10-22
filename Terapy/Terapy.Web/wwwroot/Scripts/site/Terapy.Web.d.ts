@@ -3181,6 +3181,7 @@ declare namespace Terapy.TerapyDB {
         TurnName: Serenity.StringEditor;
         TurnDataStart: Serenity.DateEditor;
         TurnEndDate: Serenity.DateEditor;
+        TurnToGenerate: Serenity.BooleanEditor;
     }
 }
 declare namespace Terapy.TerapyDB {
@@ -3189,6 +3190,7 @@ declare namespace Terapy.TerapyDB {
         TurnName?: string;
         TurnDataStart?: string;
         TurnEndDate?: string;
+        TurnToGenerate?: boolean;
     }
     namespace TurnTerapyRow {
         const idProperty = "TurnId";
@@ -3201,6 +3203,7 @@ declare namespace Terapy.TerapyDB {
             const TurnName: string;
             const TurnDataStart: string;
             const TurnEndDate: string;
+            const TurnToGenerate: string;
         }
     }
 }

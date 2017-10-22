@@ -2309,7 +2309,7 @@ var Terapy;
             return TurnTerapyForm;
         }(Serenity.PrefixedContext));
         TerapyDB.TurnTerapyForm = TurnTerapyForm;
-        [['TurnName', function () { return Serenity.StringEditor; }], ['TurnDataStart', function () { return Serenity.DateEditor; }], ['TurnEndDate', function () { return Serenity.DateEditor; }]].forEach(function (x) { return Object.defineProperty(TurnTerapyForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['TurnName', function () { return Serenity.StringEditor; }], ['TurnDataStart', function () { return Serenity.DateEditor; }], ['TurnEndDate', function () { return Serenity.DateEditor; }], ['TurnToGenerate', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(TurnTerapyForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));
 var Terapy;
@@ -2329,7 +2329,7 @@ var Terapy;
             var Fields;
             (function (Fields) {
             })(Fields = TurnTerapyRow.Fields || (TurnTerapyRow.Fields = {}));
-            ['TurnId', 'TurnName', 'TurnDataStart', 'TurnEndDate'].forEach(function (x) { return Fields[x] = x; });
+            ['TurnId', 'TurnName', 'TurnDataStart', 'TurnEndDate', 'TurnToGenerate'].forEach(function (x) { return Fields[x] = x; });
         })(TurnTerapyRow = TerapyDB.TurnTerapyRow || (TerapyDB.TurnTerapyRow = {}));
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));

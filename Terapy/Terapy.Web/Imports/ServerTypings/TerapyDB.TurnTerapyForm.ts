@@ -8,7 +8,8 @@
         TurnName: Serenity.StringEditor;
         TurnDataStart: Serenity.DateEditor;
         TurnEndDate: Serenity.DateEditor;
+        TurnToGenerate: Serenity.BooleanEditor;
     }
 
-    [['TurnName', () => Serenity.StringEditor], ['TurnDataStart', () => Serenity.DateEditor], ['TurnEndDate', () => Serenity.DateEditor]].forEach(x => Object.defineProperty(TurnTerapyForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
+    [['TurnName', () => Serenity.StringEditor], ['TurnDataStart', () => Serenity.DateEditor], ['TurnEndDate', () => Serenity.DateEditor], ['TurnToGenerate', () => Serenity.BooleanEditor]].forEach(x => Object.defineProperty(TurnTerapyForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
 }
