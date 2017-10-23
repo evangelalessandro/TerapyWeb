@@ -9016,3 +9016,9 @@ section.content > .s-DataGrid {
 .s-TerapyDB-TurnTerapyDialog .caption {
   width: 150px;
 }
+.s-TerapyDB-RoomsDialog > .size {
+  width: 650px;
+}
+.s-TerapyDB-RoomsDialog .caption {
+  width: 150px;
+}

@@ -2,9 +2,13 @@
     export interface TerapyTypeRow {
         TerapyTypeId?: number;
         TerapyTypeName?: string;
-        PersonXSession?: number;
+        TerapyTimeXTurnXPatient?: number;
+        TerapyXHour?: number;
+        TerapyDefaultIfNotRaccomanded?: number;
+        TerapyRaccomandedByDoctor?: boolean;
+        TerapyByAgeAndSex?: boolean;
+        Rooms?: number[];
         TerapyTypeCategoryId?: number;
-        ReportOrder?: number;
         TerapyTypeCategoryCategoryName?: string;
     }
 
@@ -21,12 +25,16 @@
         export namespace Fields {
             export declare const TerapyTypeId: string;
             export declare const TerapyTypeName: string;
-            export declare const PersonXSession: string;
+            export declare const TerapyTimeXTurnXPatient: string;
+            export declare const TerapyXHour: string;
+            export declare const TerapyDefaultIfNotRaccomanded: string;
+            export declare const TerapyRaccomandedByDoctor: string;
+            export declare const TerapyByAgeAndSex: string;
+            export declare const Rooms: string;
             export declare const TerapyTypeCategoryId: string;
-            export declare const ReportOrder: string;
             export declare const TerapyTypeCategoryCategoryName: string;
         }
 
-        ['TerapyTypeId', 'TerapyTypeName', 'PersonXSession', 'TerapyTypeCategoryId', 'ReportOrder', 'TerapyTypeCategoryCategoryName'].forEach(x => (<any>Fields)[x] = x);
+        ['TerapyTypeId', 'TerapyTypeName', 'TerapyTimeXTurnXPatient', 'TerapyXHour', 'TerapyDefaultIfNotRaccomanded', 'TerapyRaccomandedByDoctor', 'TerapyByAgeAndSex', 'Rooms', 'TerapyTypeCategoryId', 'TerapyTypeCategoryCategoryName'].forEach(x => (<any>Fields)[x] = x);
     }
 }

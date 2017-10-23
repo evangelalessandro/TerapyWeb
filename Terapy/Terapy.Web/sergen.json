@@ -38,6 +38,12 @@
           "PermissionKey": "Administration:General.Translation"
         },
         {
+          "Tablename": "dbo.Rooms",
+          "Identifier": "Rooms",
+          "Module": "TerapyDB",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "dbo.SchedulerTerapy",
           "Identifier": "SchedulerTerapy",
           "Module": "TerapyDB",

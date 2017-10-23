@@ -2010,21 +2010,6 @@ var Terapy;
 (function (Terapy) {
     var TerapyDB;
     (function (TerapyDB) {
-        var CustomerRepresentativesRow;
-        (function (CustomerRepresentativesRow) {
-            CustomerRepresentativesRow.idProperty = 'RepresentativeId';
-            CustomerRepresentativesRow.localTextPrefix = 'CustomerRepresentatives';
-            var Fields;
-            (function (Fields) {
-            })(Fields = CustomerRepresentativesRow.Fields || (CustomerRepresentativesRow.Fields = {}));
-            ['RepresentativeId', 'CustomerId', 'EmployeeId'].forEach(function (x) { return Fields[x] = x; });
-        })(CustomerRepresentativesRow = TerapyDB.CustomerRepresentativesRow || (TerapyDB.CustomerRepresentativesRow = {}));
-    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
-})(Terapy || (Terapy = {}));
-var Terapy;
-(function (Terapy) {
-    var TerapyDB;
-    (function (TerapyDB) {
         var CustomersForm = (function (_super) {
             __extends(CustomersForm, _super);
             function CustomersForm() {
@@ -2197,6 +2182,60 @@ var Terapy;
 (function (Terapy) {
     var TerapyDB;
     (function (TerapyDB) {
+        var RoomsForm = (function (_super) {
+            __extends(RoomsForm, _super);
+            function RoomsForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            RoomsForm.formKey = 'TerapyDB.Rooms';
+            return RoomsForm;
+        }(Serenity.PrefixedContext));
+        TerapyDB.RoomsForm = RoomsForm;
+        [['RoomName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RoomsForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
+        var RoomsRow;
+        (function (RoomsRow) {
+            RoomsRow.idProperty = 'RoomId';
+            RoomsRow.nameProperty = 'RoomName';
+            RoomsRow.localTextPrefix = 'TerapyDB.Rooms';
+            RoomsRow.lookupKey = 'TerapyDb.Rooms';
+            function getLookup() {
+                return Q.getLookup('TerapyDb.Rooms');
+            }
+            RoomsRow.getLookup = getLookup;
+            var Fields;
+            (function (Fields) {
+            })(Fields = RoomsRow.Fields || (RoomsRow.Fields = {}));
+            ['RoomId', 'RoomName'].forEach(function (x) { return Fields[x] = x; });
+        })(RoomsRow = TerapyDB.RoomsRow || (TerapyDB.RoomsRow = {}));
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
+        var RoomsService;
+        (function (RoomsService) {
+            RoomsService.baseUrl = 'TerapyDB/Rooms';
+            var Methods;
+            (function (Methods) {
+            })(Methods = RoomsService.Methods || (RoomsService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                RoomsService[x] = function (r, s, o) { return Q.serviceRequest(RoomsService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = RoomsService.baseUrl + '/' + x;
+            });
+        })(RoomsService = TerapyDB.RoomsService || (TerapyDB.RoomsService = {}));
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
         var SchedulerTerapyForm = (function (_super) {
             __extends(SchedulerTerapyForm, _super);
             function SchedulerTerapyForm() {
@@ -2246,6 +2285,26 @@ var Terapy;
 (function (Terapy) {
     var TerapyDB;
     (function (TerapyDB) {
+        var TerapyRoomRow;
+        (function (TerapyRoomRow) {
+            TerapyRoomRow.idProperty = 'RoomId';
+            TerapyRoomRow.localTextPrefix = 'TerapyDB.TerapyRoom';
+            TerapyRoomRow.lookupKey = 'TerapyDb.TerapyRoom';
+            function getLookup() {
+                return Q.getLookup('TerapyDb.TerapyRoom');
+            }
+            TerapyRoomRow.getLookup = getLookup;
+            var Fields;
+            (function (Fields) {
+            })(Fields = TerapyRoomRow.Fields || (TerapyRoomRow.Fields = {}));
+            ['RoomId', 'TerapyTypeID'].forEach(function (x) { return Fields[x] = x; });
+        })(TerapyRoomRow = TerapyDB.TerapyRoomRow || (TerapyDB.TerapyRoomRow = {}));
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
         var TerapyTypeForm = (function (_super) {
             __extends(TerapyTypeForm, _super);
             function TerapyTypeForm() {
@@ -2255,7 +2314,7 @@ var Terapy;
             return TerapyTypeForm;
         }(Serenity.PrefixedContext));
         TerapyDB.TerapyTypeForm = TerapyTypeForm;
-        [['TerapyTypeName', function () { return Serenity.StringEditor; }], ['PersonXSession', function () { return Serenity.IntegerEditor; }], ['TerapyTypeCategoryId', function () { return Serenity.LookupEditor; }], ['ReportOrder', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(TerapyTypeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['TerapyTypeName', function () { return Serenity.StringEditor; }], ['TerapyTypeCategoryId', function () { return Serenity.LookupEditor; }], ['TerapyTimeXTurnXPatient', function () { return Serenity.IntegerEditor; }], ['TerapyXHour', function () { return Serenity.IntegerEditor; }], ['Rooms', function () { return Serenity.LookupEditor; }], ['TerapyRaccomandedByDoctor', function () { return Serenity.BooleanEditor; }], ['TerapyByAgeAndSex', function () { return Serenity.BooleanEditor; }], ['TerapyDefaultIfNotRaccomanded', function () { return Serenity.LookupEditor; }]].forEach(function (x) { return Object.defineProperty(TerapyTypeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));
 var Terapy;
@@ -2275,7 +2334,7 @@ var Terapy;
             var Fields;
             (function (Fields) {
             })(Fields = TerapyTypeRow.Fields || (TerapyTypeRow.Fields = {}));
-            ['TerapyTypeId', 'TerapyTypeName', 'PersonXSession', 'TerapyTypeCategoryId', 'ReportOrder', 'TerapyTypeCategoryCategoryName'].forEach(function (x) { return Fields[x] = x; });
+            ['TerapyTypeId', 'TerapyTypeName', 'TerapyTimeXTurnXPatient', 'TerapyXHour', 'TerapyDefaultIfNotRaccomanded', 'TerapyRaccomandedByDoctor', 'TerapyByAgeAndSex', 'Rooms', 'TerapyTypeCategoryId', 'TerapyTypeCategoryCategoryName'].forEach(function (x) { return Fields[x] = x; });
         })(TerapyTypeRow = TerapyDB.TerapyTypeRow || (TerapyDB.TerapyTypeRow = {}));
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));
@@ -9847,6 +9906,53 @@ var Terapy;
 (function (Terapy) {
     var TerapyDB;
     (function (TerapyDB) {
+        var RoomsDialog = (function (_super) {
+            __extends(RoomsDialog, _super);
+            function RoomsDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new TerapyDB.RoomsForm(_this.idPrefix);
+                return _this;
+            }
+            RoomsDialog.prototype.getFormKey = function () { return TerapyDB.RoomsForm.formKey; };
+            RoomsDialog.prototype.getIdProperty = function () { return TerapyDB.RoomsRow.idProperty; };
+            RoomsDialog.prototype.getLocalTextPrefix = function () { return TerapyDB.RoomsRow.localTextPrefix; };
+            RoomsDialog.prototype.getNameProperty = function () { return TerapyDB.RoomsRow.nameProperty; };
+            RoomsDialog.prototype.getService = function () { return TerapyDB.RoomsService.baseUrl; };
+            RoomsDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], RoomsDialog);
+            return RoomsDialog;
+        }(Serenity.EntityDialog));
+        TerapyDB.RoomsDialog = RoomsDialog;
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
+        var RoomsGrid = (function (_super) {
+            __extends(RoomsGrid, _super);
+            function RoomsGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            RoomsGrid.prototype.getColumnsKey = function () { return 'TerapyDB.Rooms'; };
+            RoomsGrid.prototype.getDialogType = function () { return TerapyDB.RoomsDialog; };
+            RoomsGrid.prototype.getIdProperty = function () { return TerapyDB.RoomsRow.idProperty; };
+            RoomsGrid.prototype.getLocalTextPrefix = function () { return TerapyDB.RoomsRow.localTextPrefix; };
+            RoomsGrid.prototype.getService = function () { return TerapyDB.RoomsService.baseUrl; };
+            RoomsGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RoomsGrid);
+            return RoomsGrid;
+        }(Serenity.EntityGrid));
+        TerapyDB.RoomsGrid = RoomsGrid;
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
         var SchedulerTerapyDialog = (function (_super) {
             __extends(SchedulerTerapyDialog, _super);
             function SchedulerTerapyDialog() {
@@ -9888,6 +9994,33 @@ var Terapy;
             return SchedulerTerapyGrid;
         }(Serenity.EntityGrid));
         TerapyDB.SchedulerTerapyGrid = SchedulerTerapyGrid;
+    })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
+})(Terapy || (Terapy = {}));
+var Terapy;
+(function (Terapy) {
+    var TerapyDB;
+    (function (TerapyDB) {
+        var RoomListFormatter = (function () {
+            function RoomListFormatter() {
+            }
+            RoomListFormatter.prototype.format = function (ctx) {
+                var idList = ctx.value;
+                if (!idList || !idList.length)
+                    return "";
+                var byId = TerapyDB.RoomsRow.getLookup().itemById;
+                return idList.map(function (x) {
+                    var g = byId[x];
+                    if (!g)
+                        return x.toString();
+                    return Q.htmlEncode(g.RoomName);
+                }).join(", ");
+            };
+            RoomListFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], RoomListFormatter);
+            return RoomListFormatter;
+        }());
+        TerapyDB.RoomListFormatter = RoomListFormatter;
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));
 var Terapy;

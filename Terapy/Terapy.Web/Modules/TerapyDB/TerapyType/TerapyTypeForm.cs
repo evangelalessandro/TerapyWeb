@@ -13,9 +13,14 @@ namespace Terapy.TerapyDB.Forms
     [BasedOnRow(typeof(Entities.TerapyTypeRow))]
     public class TerapyTypeForm
     {
-        public String TerapyTypeName { get; set; }
-        public Int32 PersonXSession { get; set; }
+        public String TerapyTypeName { get; set; } 
         public Int32 TerapyTypeCategoryId { get; set; }
-        public Int32 ReportOrder { get; set; }
+        public Int32 TerapyTimeXTurnXPatient { get; set; }
+        public Int32 TerapyXHour { get; set; }
+        public List<Int32> Rooms { get; set; }
+        public Boolean TerapyRaccomandedByDoctor { get; set; }
+        public Boolean TerapyByAgeAndSex { get; set; }
+        public Int32 TerapyDefaultIfNotRaccomanded { get; set; }
+        
     }
 }

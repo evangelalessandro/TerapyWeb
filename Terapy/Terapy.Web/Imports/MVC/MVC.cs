@@ -460,6 +460,11 @@ namespace MVC
                 public const string MessagesTranslationIndex = "~/Modules/TerapyDB/MessagesTranslation/MessagesTranslationIndex.cshtml";
             }
 
+            public static class Rooms
+            {
+                public const string RoomsIndex = "~/Modules/TerapyDB/Rooms/RoomsIndex.cshtml";
+            }
+
             public static class SchedulerTerapy
             {
                 public const string SchedulerTerapyIndex = "~/Modules/TerapyDB/SchedulerTerapy/SchedulerTerapyIndex.cshtml";

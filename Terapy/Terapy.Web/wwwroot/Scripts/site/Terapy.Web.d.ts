@@ -2784,22 +2784,6 @@ declare namespace Terapy.TerapyDB {
     }
 }
 declare namespace Terapy.TerapyDB {
-    interface CustomerRepresentativesRow {
-        RepresentativeId?: number;
-        CustomerId?: number;
-        EmployeeId?: number;
-    }
-    namespace CustomerRepresentativesRow {
-        const idProperty = "RepresentativeId";
-        const localTextPrefix = "CustomerRepresentatives";
-        namespace Fields {
-            const RepresentativeId: string;
-            const CustomerId: string;
-            const EmployeeId: string;
-        }
-    }
-}
-declare namespace Terapy.TerapyDB {
 }
 declare namespace Terapy.TerapyDB {
     class CustomersForm extends Serenity.PrefixedContext {
@@ -3008,6 +2992,50 @@ declare namespace Terapy.TerapyDB {
 declare namespace Terapy.TerapyDB {
 }
 declare namespace Terapy.TerapyDB {
+    class RoomsForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface RoomsForm {
+        RoomName: Serenity.StringEditor;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    interface RoomsRow {
+        RoomId?: number;
+        RoomName?: string;
+    }
+    namespace RoomsRow {
+        const idProperty = "RoomId";
+        const nameProperty = "RoomName";
+        const localTextPrefix = "TerapyDB.Rooms";
+        const lookupKey = "TerapyDb.Rooms";
+        function getLookup(): Q.Lookup<RoomsRow>;
+        namespace Fields {
+            const RoomId: string;
+            const RoomName: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+    namespace RoomsService {
+        const baseUrl = "TerapyDB/Rooms";
+        function Create(request: Serenity.SaveRequest<RoomsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RoomsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RoomsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RoomsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
+}
+declare namespace Terapy.TerapyDB {
     class SchedulerTerapyForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -3117,6 +3145,22 @@ declare namespace Terapy.TerapyDB {
     }
 }
 declare namespace Terapy.TerapyDB {
+    interface TerapyRoomRow {
+        RoomId?: number;
+        TerapyTypeID?: number;
+    }
+    namespace TerapyRoomRow {
+        const idProperty = "RoomId";
+        const localTextPrefix = "TerapyDB.TerapyRoom";
+        const lookupKey = "TerapyDb.TerapyRoom";
+        function getLookup(): Q.Lookup<TerapyRoomRow>;
+        namespace Fields {
+            const RoomId: string;
+            const TerapyTypeID: string;
+        }
+    }
+}
+declare namespace Terapy.TerapyDB {
 }
 declare namespace Terapy.TerapyDB {
     class TerapyTypeForm extends Serenity.PrefixedContext {
@@ -3124,18 +3168,26 @@ declare namespace Terapy.TerapyDB {
     }
     interface TerapyTypeForm {
         TerapyTypeName: Serenity.StringEditor;
-        PersonXSession: Serenity.IntegerEditor;
         TerapyTypeCategoryId: Serenity.LookupEditor;
-        ReportOrder: Serenity.IntegerEditor;
+        TerapyTimeXTurnXPatient: Serenity.IntegerEditor;
+        TerapyXHour: Serenity.IntegerEditor;
+        Rooms: Serenity.LookupEditor;
+        TerapyRaccomandedByDoctor: Serenity.BooleanEditor;
+        TerapyByAgeAndSex: Serenity.BooleanEditor;
+        TerapyDefaultIfNotRaccomanded: Serenity.LookupEditor;
     }
 }
 declare namespace Terapy.TerapyDB {
     interface TerapyTypeRow {
         TerapyTypeId?: number;
         TerapyTypeName?: string;
-        PersonXSession?: number;
+        TerapyTimeXTurnXPatient?: number;
+        TerapyXHour?: number;
+        TerapyDefaultIfNotRaccomanded?: number;
+        TerapyRaccomandedByDoctor?: boolean;
+        TerapyByAgeAndSex?: boolean;
+        Rooms?: number[];
         TerapyTypeCategoryId?: number;
-        ReportOrder?: number;
         TerapyTypeCategoryCategoryName?: string;
     }
     namespace TerapyTypeRow {
@@ -3147,9 +3199,13 @@ declare namespace Terapy.TerapyDB {
         namespace Fields {
             const TerapyTypeId: string;
             const TerapyTypeName: string;
-            const PersonXSession: string;
+            const TerapyTimeXTurnXPatient: string;
+            const TerapyXHour: string;
+            const TerapyDefaultIfNotRaccomanded: string;
+            const TerapyRaccomandedByDoctor: string;
+            const TerapyByAgeAndSex: string;
+            const Rooms: string;
             const TerapyTypeCategoryId: string;
-            const ReportOrder: string;
             const TerapyTypeCategoryCategoryName: string;
         }
     }
@@ -5076,6 +5132,26 @@ declare namespace Terapy.TerapyDB {
     }
 }
 declare namespace Terapy.TerapyDB {
+    class RoomsDialog extends Serenity.EntityDialog<RoomsRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RoomsForm;
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class RoomsGrid extends Serenity.EntityGrid<RoomsRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RoomsDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
     class SchedulerTerapyDialog extends Serenity.EntityDialog<SchedulerTerapyRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -5093,6 +5169,11 @@ declare namespace Terapy.TerapyDB {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace Terapy.TerapyDB {
+    class RoomListFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext): string;
     }
 }
 declare namespace Terapy.TerapyDB {
