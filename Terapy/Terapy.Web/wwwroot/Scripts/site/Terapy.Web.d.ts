@@ -2997,12 +2997,14 @@ declare namespace Terapy.TerapyDB {
     }
     interface RoomsForm {
         RoomName: Serenity.StringEditor;
+        Terapies: Serenity.LookupEditor;
     }
 }
 declare namespace Terapy.TerapyDB {
     interface RoomsRow {
         RoomId?: number;
         RoomName?: string;
+        Terapies?: number[];
     }
     namespace RoomsRow {
         const idProperty = "RoomId";
@@ -3013,6 +3015,7 @@ declare namespace Terapy.TerapyDB {
         namespace Fields {
             const RoomId: string;
             const RoomName: string;
+            const Terapies: string;
         }
     }
 }

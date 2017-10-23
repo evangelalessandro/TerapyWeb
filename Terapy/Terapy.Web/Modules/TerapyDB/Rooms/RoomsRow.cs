@@ -6,6 +6,7 @@ namespace Terapy.TerapyDB.Entities
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.IO;
 
@@ -29,6 +30,15 @@ namespace Terapy.TerapyDB.Entities
             set { Fields.RoomName[this] = value; }
         }
 
+        [DisplayName("Terapy"), QuickFilter]
+        [LookupEditor(typeof(TerapyTypeRow), Multiple = true), NotMapped]
+        [LinkingSetRelation(typeof(TerapyRoomRow), "RoomID", "TerapyTypeID")]
+        public List<Int32> Terapies
+        {
+            get { return Fields.Terapies[this]; }
+            set { Fields.Terapies[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.RoomId; }
@@ -50,6 +60,8 @@ namespace Terapy.TerapyDB.Entities
         {
             public Int32Field RoomId;
             public StringField RoomName;
+            public ListField<Int32> Terapies;
+
 
             public RowFields()
                 : base()

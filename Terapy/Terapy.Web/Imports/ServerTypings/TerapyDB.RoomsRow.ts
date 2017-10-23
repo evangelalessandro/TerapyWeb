@@ -2,6 +2,7 @@
     export interface RoomsRow {
         RoomId?: number;
         RoomName?: string;
+        Terapies?: number[];
     }
 
     export namespace RoomsRow {
@@ -17,8 +18,9 @@
         export namespace Fields {
             export declare const RoomId: string;
             export declare const RoomName: string;
+            export declare const Terapies: string;
         }
 
-        ['RoomId', 'RoomName'].forEach(x => (<any>Fields)[x] = x);
+        ['RoomId', 'RoomName', 'Terapies'].forEach(x => (<any>Fields)[x] = x);
     }
 }

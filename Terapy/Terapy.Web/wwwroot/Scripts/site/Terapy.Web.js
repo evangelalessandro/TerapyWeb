@@ -2191,7 +2191,7 @@ var Terapy;
             return RoomsForm;
         }(Serenity.PrefixedContext));
         TerapyDB.RoomsForm = RoomsForm;
-        [['RoomName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RoomsForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['RoomName', function () { return Serenity.StringEditor; }], ['Terapies', function () { return Serenity.LookupEditor; }]].forEach(function (x) { return Object.defineProperty(RoomsForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));
 var Terapy;
@@ -2211,7 +2211,7 @@ var Terapy;
             var Fields;
             (function (Fields) {
             })(Fields = RoomsRow.Fields || (RoomsRow.Fields = {}));
-            ['RoomId', 'RoomName'].forEach(function (x) { return Fields[x] = x; });
+            ['RoomId', 'RoomName', 'Terapies'].forEach(function (x) { return Fields[x] = x; });
         })(RoomsRow = TerapyDB.RoomsRow || (TerapyDB.RoomsRow = {}));
     })(TerapyDB = Terapy.TerapyDB || (Terapy.TerapyDB = {}));
 })(Terapy || (Terapy = {}));

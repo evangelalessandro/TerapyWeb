@@ -14,5 +14,7 @@ namespace Terapy.TerapyDB.Forms
     public class RoomsForm
     {
         public String RoomName { get; set; }
+        public List<Int32> Terapies { get; set; }
+
     }
 }
